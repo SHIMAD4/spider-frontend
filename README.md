@@ -1,5 +1,5 @@
 # Spider
-Spider - is a web application for managing a to-do tasks, to-do list and habits.
+Spider - is a web application for managing a to-do tasks, lists, boards and habits.
 
 ## Stack
 1. HTML + CSS (SCSS)
