@@ -1,11 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './reset.css'
+import './app/styles/reset.css'
 import './index.module.scss'
-import App from './App.tsx'
+import TasksPage from './pages/tasks'
+import { StoreProvider } from './app/store/StoreProvider.tsx'
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <App />
+        <StoreProvider>
+            <TasksPage />
+        </StoreProvider>
     </StrictMode>,
 )
