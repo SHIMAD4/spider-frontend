@@ -1,0 +1,23 @@
+.task {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    .checkbox:checked + .text {
+      text-decoration: line-through;
+      color: #888;
+    }
+
+    .text {
+      transition: color 0.2s;
+    }
+  }
+}
