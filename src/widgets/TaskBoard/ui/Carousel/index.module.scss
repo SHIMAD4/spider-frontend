@@ -14,6 +14,9 @@ $highDisplayResFactor: 4; // 2560
 }
 
 .carouselWindow {
+  display: flex;
+  align-items: center;
+
   width: calc(550px * $highDisplayResFactor);
   height: 710px;
 
@@ -42,5 +45,22 @@ $highDisplayResFactor: 4; // 2560
       background-color: $accentColor;
       color: $bgColor;
     }
+  }
+}
+
+.carouselButton {
+  width: 150px;
+  height: 702px;
+
+  border-radius: 16px;
+
+  &:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }

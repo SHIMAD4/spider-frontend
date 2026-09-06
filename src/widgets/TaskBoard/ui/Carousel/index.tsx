@@ -2,6 +2,7 @@ import { TaskList } from '../TaskList'
 import { type FC, useLayoutEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 import type { TaskDay } from '../../../../entities/task/model/taskSlice.ts'
+import { Icons } from '../../../../shared/ui/Icons'
 
 type CarouselProps = {
     activeDayId: number
@@ -11,7 +12,7 @@ type CarouselProps = {
 }
 
 const PAGE_WIDTH = 550
-const PAGE_GAP = 24
+const PAGE_GAP = 26
 const STEP = PAGE_WIDTH + PAGE_GAP
 
 // TODO: Посмотреть, возможно декомпозиция нужна
@@ -76,8 +77,15 @@ export const Carousel: FC<CarouselProps> = ({
 
     return (
         <div className={styles.carousel}>
-            <button onClick={handlePrevClick} disabled={!hasPrev}>
-                prev
+            <button
+                className={styles.carouselButton}
+                onClick={handlePrevClick}
+                disabled={!hasPrev}
+            >
+                <Icons.Arrow
+                    size={24 * 4}
+                    style={{ transform: 'rotate(180deg)' }}
+                />
             </button>
 
             <div ref={windowRef} className={styles.carouselWindow}>
@@ -111,8 +119,12 @@ export const Carousel: FC<CarouselProps> = ({
                 </ul>
             </div>
 
-            <button onClick={handleNextClick} disabled={!hasNext}>
-                next
+            <button
+                className={styles.carouselButton}
+                onClick={handleNextClick}
+                disabled={!hasNext}
+            >
+                <Icons.Arrow size={24 * 4} />
             </button>
         </div>
     )
