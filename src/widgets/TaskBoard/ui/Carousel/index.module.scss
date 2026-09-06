@@ -63,4 +63,9 @@ $highDisplayResFactor: 4; // 2560
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
+
+  &:hover {
+    background-color: $accentColor;
+    color: $bgColor;
+  }
 }

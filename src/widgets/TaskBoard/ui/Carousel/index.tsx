@@ -88,6 +88,7 @@ export const Carousel: FC<CarouselProps> = ({
                     style={{ transform: 'rotate(180deg)' }}
                 />
             </Button>
+
             <div ref={windowRef} className={styles.carouselWindow}>
                 <ul
                     className={styles.carouselData}

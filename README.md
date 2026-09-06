@@ -6,3 +6,5 @@ Spider - is a web application for managing a to-do tasks, lists, boards and habi
 2. Typescript
 3. React
 4. Vite
+
+[Icons](https://www.flaticon.com/icon-fonts-most-downloaded?weight=regular&type=uicon)

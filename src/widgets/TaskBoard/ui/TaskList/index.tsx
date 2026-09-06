@@ -15,6 +15,7 @@ export const TaskList: FC<TaskListProps> = ({
     return (
         <div className={styles.taskWidget}>
             <DateTitle dateISO={date} theme={theme} />
+
             <ul className={styles.taskList}>
                 {tasks.map(({ id, text, completed }, index) => (
                     <li key={id} className={styles.taskItem}>
@@ -29,7 +30,11 @@ export const TaskList: FC<TaskListProps> = ({
                                 />
                             }
                             after={
-                                <DeleteTask id={id} activeDayId={activeDayId} />
+                                <DeleteTask
+                                    id={id}
+                                    activeDayId={activeDayId}
+                                    theme={theme}
+                                />
                             }
                         />
                     </li>

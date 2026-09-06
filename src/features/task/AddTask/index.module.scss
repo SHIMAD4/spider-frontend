@@ -1,3 +1,5 @@
+@import '../../../app/styles/variables.module.scss';
+
 .addTask {
   display: flex;
   justify-content: center;
@@ -9,4 +11,12 @@
   padding: 10px 10px;
 
   border-radius: 8px;
+
+  background-color: $bgColor;
+  fill: $accentColor;
+
+  &:hover {
+    background-color: $accentColor;
+    fill: $bgColor;
+  }
 }

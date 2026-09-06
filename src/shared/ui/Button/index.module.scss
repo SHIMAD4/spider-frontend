@@ -1,11 +1,13 @@
-.button {
-  svg {
-    fill: #93032E
-  }
+@import "../../../app/styles/variables.module.scss";
 
-  &:hover {
-    svg {
-      fill: #151515;
-    }
+.button[data-state="isToday"] {
+  svg {
+    fill: $bgColor;
+  }
+}
+
+.button[data-state="isDefaultDay"] {
+  svg {
+    fill: $accentColor;
   }
 }
