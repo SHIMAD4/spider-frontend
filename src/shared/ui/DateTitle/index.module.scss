@@ -10,6 +10,8 @@
 
   border-bottom: 2px solid $accentColor;
 
+  font-weight: bold;
+
   &[data-state="isToday"] {
     border-color: $bgColor;
   }
