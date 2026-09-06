@@ -1,3 +1,13 @@
-.button {
-  padding: 16px 24px;
+@import "../../../app/styles/variables.module.scss";
+
+.button[data-state="isToday"] {
+  svg {
+    fill: $bgColor;
+  }
+}
+
+.button[data-state="isDefaultDay"] {
+  svg {
+    fill: $accentColor;
+  }
 }

@@ -7,3 +7,15 @@ body {
 
   font-family: 'TildaSans', sans-serif;
 }
+
+button {
+  background-color: transparent;
+  border: none;
+  color: $accentColor;
+
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,4 +1,6 @@
 import type { FC } from 'react'
+import clsx from 'clsx'
+import styles from './index.module.scss'
 
 type InputCheckboxProps = {
     completed: boolean
@@ -14,7 +16,7 @@ export const InputCheckbox: FC<InputCheckboxProps> = ({
     return (
         <input
             type='checkbox'
-            className={className}
+            className={clsx(styles.inputCheckbox, className)}
             checked={completed}
             onChange={(event) => onCheckedChange(event.currentTarget.checked)}
         />

@@ -1,7 +1,7 @@
 import styles from './index.module.scss'
 import type { FC } from 'react'
 
-export const DateTitle: FC<{ dateISO: string; theme: string }> = ({
+export const DateTitle: FC<{ dateISO: string; theme?: string }> = ({
     dateISO,
     theme,
 }) => {
