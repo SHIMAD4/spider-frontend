@@ -1,12 +1,12 @@
 .taskWidget {
+  width: 500px;
+  height: 650px;
+
   padding: 24px;
 
   border: 1px solid #000;
 
   .taskList {
-    width: 500px;
-    height: 650px;
-
     display: flex;
     flex-direction: column;
     gap: 16px;

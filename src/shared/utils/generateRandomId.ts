@@ -1,3 +1,3 @@
 export const generateRandomId = () => {
-    return Math.random().toString(36).slice(2, 9)
+    return Math.floor(1_000_000 + Math.random() * 9_000_000)
 }

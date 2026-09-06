@@ -1,20 +1,18 @@
-import type { ReactNode } from 'react'
-
 export type TaskListProps = {
+    activeDayId: number
     tasks: TaskTypes[]
-}
-
-export type TaskProps = {
-    id: string
-    text: string
-    position?: number
-    completed: boolean
-    before?: ReactNode
-    after?: ReactNode
+    date: string
 }
 
 export type TaskTypes = {
-    id: string
+    id: number
     text: string
     completed: boolean
+}
+
+export type PayloadActionType = {
+    id: number
+    text: string
+    completed: boolean
+    dayId: number
 }
