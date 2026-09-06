@@ -1,3 +1,5 @@
+@import '../../../../app/styles/variables.module.scss';
+
 $highDisplayResFactor: 4; // 2560
 //$highDisplayResFactor: 3; // 1920
 //$highDisplayResFactor: 2; // 1440
@@ -13,7 +15,7 @@ $highDisplayResFactor: 4; // 2560
 
 .carouselWindow {
   width: calc(550px * $highDisplayResFactor);
-  height: 700px;
+  height: 710px;
 
   overflow: hidden;
 }
@@ -27,8 +29,18 @@ $highDisplayResFactor: 4; // 2560
 
   margin: 0;
   padding: 0;
-}
 
-.carouselData > li {
-  flex: 0 0 550px;
+  .carouselItem {
+    flex: 0 0 550px;
+
+    border-radius: 16px;
+
+    background-color: $bgColor;
+    color: $accentColor;
+
+    &[data-state='isToday'] {
+      background-color: $accentColor;
+      color: $bgColor;
+    }
+  }
 }

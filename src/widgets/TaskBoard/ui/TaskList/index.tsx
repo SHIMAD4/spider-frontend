@@ -6,10 +6,15 @@ import { DeleteTask } from '../../../../features/task/DeleteTask'
 import { DateTitle } from '../../../../shared/ui/DateTitle'
 import styles from './index.module.scss'
 
-export const TaskList: FC<TaskListProps> = ({ tasks, date, activeDayId }) => {
+export const TaskList: FC<TaskListProps> = ({
+    tasks,
+    date,
+    activeDayId,
+    theme,
+}) => {
     return (
         <div className={styles.taskWidget}>
-            <DateTitle dateISO={date} />
+            <DateTitle dateISO={date} theme={theme} />
             <ul className={styles.taskList}>
                 {tasks.map(({ id, text, completed }, index) => (
                     <li key={id} className={styles.taskItem}>

@@ -1,3 +1,5 @@
+@import '../../../app/styles/variables.module.scss';
+
 .title {
   display: flex;
   justify-content: center;
@@ -6,5 +8,9 @@
   padding-bottom: 16px;
   margin-bottom: 16px;
 
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid $accentColor;
+
+  &[data-state="isToday"] {
+    border-color: $bgColor;
+  }
 }

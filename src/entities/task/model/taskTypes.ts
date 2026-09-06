@@ -2,6 +2,7 @@ export type TaskListProps = {
     activeDayId: number
     tasks: TaskTypes[]
     date: string
+    theme: string
 }
 
 export type TaskTypes = {
