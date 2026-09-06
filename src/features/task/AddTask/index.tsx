@@ -35,7 +35,7 @@ export const AddTask: FC<AddTaskProps> = ({ activeDayId }) => {
                 value={inputValue}
                 onValueChange={setInputValue}
             />
-            <Button onClick={handleAddTask}>
+            <Button className={styles.addButton} onClick={handleAddTask}>
                 <Icons.Add size={16} />
             </Button>
         </div>

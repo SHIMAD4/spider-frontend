@@ -1,3 +1,22 @@
+@import "../../../app/styles/variables.module.scss";
+
 .input {
   padding: 16px 24px;
+  border: none;
+  background-color: transparent;
+  transition: border .2s ease-in-out;
+  color: $accentColor;
+  font-size: 16px;
+
+  &::placeholder {
+    font-family: 'TildaSans', sans-serif;
+    font-weight: bold;
+    color: $accentColor;
+  }
+
+  &:focus {
+    outline: 1px solid $accentColor;
+
+    border-radius: 8px;
+  }
 }
