@@ -1,0 +1,34 @@
+$highDisplayResFactor: 4; // 2560
+//$highDisplayResFactor: 3; // 1920
+//$highDisplayResFactor: 2; // 1440
+//$highDisplayResFactor: 1.5; // 1024
+//$highDisplayResFactor: 1; // 768
+//$highDisplayResFactor: 0.5; // 425
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carouselWindow {
+  width: calc(550px * $highDisplayResFactor);
+  height: 700px;
+
+  overflow: hidden;
+}
+
+.carouselData {
+  width: max-content;
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  margin: 0;
+  padding: 0;
+}
+
+.carouselData > li {
+  flex: 0 0 550px;
+}

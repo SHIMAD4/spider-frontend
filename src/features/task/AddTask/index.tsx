@@ -3,10 +3,14 @@ import { InputText } from '../../../shared/ui/InputText'
 import { Button } from '../../../shared/ui/Button'
 import { addTask } from '../../../entities/task/model/taskSlice.ts'
 import { useAppDispatch } from '../../../app/store/hooks.ts'
-import { useState } from 'react'
+import { type FC, useState } from 'react'
 import { generateRandomId } from '../../../shared/utils/generateRandomId.ts'
 
-export const AddTask = () => {
+type AddTaskProps = {
+    activeDayId: number
+}
+
+export const AddTask: FC<AddTaskProps> = ({ activeDayId }) => {
     const [inputValue, setInputValue] = useState<string>('')
     const dispatch = useAppDispatch()
 
@@ -14,10 +18,12 @@ export const AddTask = () => {
         dispatch(
             addTask({
                 id: generateRandomId(),
+                dayId: activeDayId,
                 text: inputValue,
                 completed: false,
             }),
         )
+
         setInputValue('')
     }
 

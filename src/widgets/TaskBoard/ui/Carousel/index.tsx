@@ -1,0 +1,113 @@
+import { TaskList } from '../TaskList'
+import { type FC, useLayoutEffect, useRef, useState } from 'react'
+import styles from './index.module.scss'
+import type { TaskDay } from '../../../../entities/task/model/taskSlice.ts'
+
+type CarouselProps = {
+    activeDayId: number
+    todayId: number | null
+    data: TaskDay[]
+    onChangeDayId: (day: number) => void
+}
+
+const PAGE_WIDTH = 550
+const PAGE_GAP = 24
+const STEP = PAGE_WIDTH + PAGE_GAP
+
+// TODO: Посмотреть, возможно декомпозиция нужна
+export const Carousel: FC<CarouselProps> = ({
+    activeDayId,
+    todayId,
+    data,
+    onChangeDayId,
+}) => {
+    const [isReady, setIsReady] = useState(false)
+    const windowRef = useRef<HTMLDivElement>(null)
+    const [windowWidth, setWindowWidth] = useState(0)
+
+    const currentIndex = data.findIndex((list) => list.id === activeDayId)
+
+    useLayoutEffect(() => {
+        if (!windowRef.current) return
+
+        const observer = new ResizeObserver(([entry]) => {
+            setWindowWidth(entry.contentRect.width)
+
+            requestAnimationFrame(() => {
+                setIsReady(true)
+            })
+        })
+
+        observer.observe(windowRef.current)
+
+        return () => observer.disconnect()
+    }, [])
+
+    if (currentIndex === -1) {
+        return <p>Индекс дня не найден</p>
+    }
+
+    const offset = windowWidth / 2 - currentIndex * STEP - PAGE_WIDTH / 2
+
+    const hasPrev = currentIndex > 0
+    const hasNext = currentIndex < data.length - 1
+
+    const handlePrevClick = () => {
+        if (!hasPrev) return
+
+        const prevIndex = currentIndex - 1
+        const prevDayId = data[prevIndex]?.id
+
+        if (prevDayId) onChangeDayId(prevDayId)
+    }
+
+    const handleNextClick = () => {
+        if (!hasNext) return
+
+        const nextIndex = currentIndex + 1
+        const nextDayId = data[nextIndex]?.id
+
+        if (nextDayId) onChangeDayId(nextDayId)
+    }
+
+    return (
+        <div className={styles.carousel}>
+            <button onClick={handlePrevClick} disabled={!hasPrev}>
+                prev
+            </button>
+
+            <div ref={windowRef} className={styles.carouselWindow}>
+                <ul
+                    className={styles.carouselData}
+                    style={{
+                        transform: `translateX(${offset}px)`,
+                        transition: isReady
+                            ? 'transform 0.2s ease-in-out'
+                            : 'none',
+                    }}
+                >
+                    {data.map((list) => (
+                        <li
+                            key={list.id}
+                            style={
+                                list.id === todayId
+                                    ? { backgroundColor: 'green' }
+                                    : undefined
+                            }
+                        >
+                            <TaskList
+                                tasks={list.tasks}
+                                date={list.date}
+                                activeDayId={activeDayId}
+                            />
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <button onClick={handleNextClick} disabled={!hasNext}>
+                next
+            </button>
+        </div>
+    )
+}

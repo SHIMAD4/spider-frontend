@@ -13,6 +13,6 @@ listenerMiddleware.startListening({
     effect: async (_, listenerApi) => {
         const { tasks } = listenerApi.getState() as RootStateType
 
-        localStorage.setItem('tasks', JSON.stringify(tasks.tasks))
+        localStorage.setItem('days', JSON.stringify(tasks))
     },
 })

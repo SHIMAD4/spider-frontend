@@ -5,15 +5,20 @@ import { toggleTask } from '../../../entities/task/model/taskSlice.ts'
 import type { FC } from 'react'
 
 type ToggleTaskAction = {
-    id: string
+    id: number
     completed: boolean
+    activeDayId: number
 }
 
-export const ToggleTask: FC<ToggleTaskAction> = ({ id, completed }) => {
+export const ToggleTask: FC<ToggleTaskAction> = ({
+    id,
+    completed,
+    activeDayId,
+}) => {
     const dispatch = useAppDispatch()
 
     const handleChange = () => {
-        dispatch(toggleTask(id))
+        dispatch(toggleTask({ id: id, dayId: activeDayId }))
     }
 
     return (
