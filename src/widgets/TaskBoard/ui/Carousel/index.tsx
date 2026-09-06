@@ -3,6 +3,7 @@ import { type FC, useLayoutEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 import type { TaskDay } from '../../../../entities/task/model/taskSlice.ts'
 import { Icons } from '../../../../shared/ui/Icons'
+import { Button } from '../../../../shared/ui/Button'
 
 type CarouselProps = {
     activeDayId: number
@@ -77,7 +78,7 @@ export const Carousel: FC<CarouselProps> = ({
 
     return (
         <div className={styles.carousel}>
-            <button
+            <Button
                 className={styles.carouselButton}
                 onClick={handlePrevClick}
                 disabled={!hasPrev}
@@ -86,8 +87,7 @@ export const Carousel: FC<CarouselProps> = ({
                     size={24 * 4}
                     style={{ transform: 'rotate(180deg)' }}
                 />
-            </button>
-
+            </Button>
             <div ref={windowRef} className={styles.carouselWindow}>
                 <ul
                     className={styles.carouselData}
@@ -119,13 +119,13 @@ export const Carousel: FC<CarouselProps> = ({
                 </ul>
             </div>
 
-            <button
+            <Button
                 className={styles.carouselButton}
                 onClick={handleNextClick}
                 disabled={!hasNext}
             >
                 <Icons.Arrow size={24 * 4} />
-            </button>
+            </Button>
         </div>
     )
 }

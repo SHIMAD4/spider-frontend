@@ -5,6 +5,7 @@ import { addTask } from '../../../entities/task/model/taskSlice.ts'
 import { useAppDispatch } from '../../../app/store/hooks.ts'
 import { type FC, useState } from 'react'
 import { generateRandomId } from '../../../shared/utils/generateRandomId.ts'
+import { Icons } from '../../../shared/ui/Icons'
 
 type AddTaskProps = {
     activeDayId: number
@@ -34,7 +35,9 @@ export const AddTask: FC<AddTaskProps> = ({ activeDayId }) => {
                 value={inputValue}
                 onValueChange={setInputValue}
             />
-            <Button onClick={handleAddTask}>Добавить задачу</Button>
+            <Button onClick={handleAddTask}>
+                <Icons.Add size={16} />
+            </Button>
         </div>
     )
 }
