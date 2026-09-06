@@ -70,6 +70,10 @@ export const Carousel: FC<CarouselProps> = ({
         if (nextDayId) onChangeDayId(nextDayId)
     }
 
+    const getDayTheme = (listId: number, todayId: number | null) => {
+        return listId === todayId ? 'isToday' : 'isDefaultDay'
+    }
+
     return (
         <div className={styles.carousel}>
             <button onClick={handlePrevClick} disabled={!hasPrev}>
@@ -86,22 +90,24 @@ export const Carousel: FC<CarouselProps> = ({
                             : 'none',
                     }}
                 >
-                    {data.map((list) => (
-                        <li
-                            key={list.id}
-                            style={
-                                list.id === todayId
-                                    ? { backgroundColor: 'green' }
-                                    : undefined
-                            }
-                        >
-                            <TaskList
-                                tasks={list.tasks}
-                                date={list.date}
-                                activeDayId={activeDayId}
-                            />
-                        </li>
-                    ))}
+                    {data.map((list) => {
+                        const dayTheme = getDayTheme(list.id, todayId)
+
+                        return (
+                            <li
+                                className={styles.carouselItem}
+                                key={list.id}
+                                data-state={dayTheme}
+                            >
+                                <TaskList
+                                    tasks={list.tasks}
+                                    date={list.date}
+                                    activeDayId={activeDayId}
+                                    theme={dayTheme}
+                                />
+                            </li>
+                        )
+                    })}
                 </ul>
             </div>
 

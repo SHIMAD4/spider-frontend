@@ -1,3 +1,7 @@
+@import './app/styles/variables.module.scss';
+
 body {
   font-size: 24px;
+  background-color: $bgColor;
+  color: $accentColor;
 }
