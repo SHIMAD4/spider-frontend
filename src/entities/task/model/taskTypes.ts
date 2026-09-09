@@ -1,5 +1,6 @@
 export type TaskListProps = {
     activeDayId: number
+    isActiveDay: boolean
     tasks: TaskTypes[]
     date: string
     theme?: string

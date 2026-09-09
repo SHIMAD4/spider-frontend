@@ -1,9 +1,16 @@
 import styles from './index.module.scss'
 import type { FC } from 'react'
 
-export const DateTitle: FC<{ dateISO: string; theme?: string }> = ({
+type DataTitleProps = {
+    dateISO: string
+    theme?: string
+    isActiveDay: boolean
+}
+
+export const DateTitle: FC<DataTitleProps> = ({
     dateISO,
     theme,
+    isActiveDay,
 }) => {
     const dateFromISO = new Date(dateISO)
     const formattedDate = dateFromISO.toLocaleDateString('ru-RU', {
@@ -13,7 +20,11 @@ export const DateTitle: FC<{ dateISO: string; theme?: string }> = ({
     })
 
     return (
-        <p className={styles.title} data-state={theme}>
+        <p
+            className={styles.title}
+            data-state={theme}
+            data-active={isActiveDay}
+        >
             {formattedDate}
         </p>
     )

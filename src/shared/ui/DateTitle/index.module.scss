@@ -8,11 +8,15 @@
   padding-bottom: 16px;
   margin-bottom: 16px;
 
-  border-bottom: 2px solid $accentColor;
+  border-bottom: 2px solid $darkerAccentColor;
 
   font-weight: bold;
 
   &[data-state="isToday"] {
     border-color: $bgColor;
+  }
+
+  &[data-active='true'] {
+    border-color: $accentColor;
   }
 }

@@ -4,7 +4,7 @@ import styles from './index.module.scss'
 import type { TaskDay } from '../../../../entities/task/model/taskSlice.ts'
 import { Icons } from '../../../../shared/ui/Icons'
 import { Button } from '../../../../shared/ui/Button'
-import { getDayTheme } from '../../utils/getDayTheme.ts'
+import { getActiveDayState, getDayTheme } from '../../utils/getDayTheme.ts'
 
 type CarouselProps = {
     activeDayId: number
@@ -98,17 +98,24 @@ export const Carousel: FC<CarouselProps> = ({
                 >
                     {data.map((list) => {
                         const dayTheme = getDayTheme(list.id, todayId)
+                        const isActiveDay = getActiveDayState(
+                            activeDayId,
+                            list.id,
+                            todayId,
+                        )
 
                         return (
                             <li
-                                className={styles.carouselItem}
                                 key={list.id}
+                                className={styles.carouselItem}
                                 data-state={dayTheme}
+                                data-active={isActiveDay}
                             >
                                 <TaskList
                                     tasks={list.tasks}
                                     date={list.date}
                                     activeDayId={activeDayId}
+                                    isActiveDay={isActiveDay}
                                     theme={dayTheme}
                                 />
                             </li>
@@ -122,7 +129,7 @@ export const Carousel: FC<CarouselProps> = ({
                 onClick={handleNextClick}
                 disabled={!hasNext}
             >
-                <Icons.Arrow size={24 * 4} />
+                <Icons.Arrow size={96} />
             </Button>
         </div>
     )

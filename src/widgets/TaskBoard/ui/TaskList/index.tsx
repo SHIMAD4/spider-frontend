@@ -10,11 +10,12 @@ export const TaskList: FC<TaskListProps> = ({
     tasks,
     date,
     activeDayId,
+    isActiveDay,
     theme,
 }) => {
     return (
-        <div className={styles.taskWidget}>
-            <DateTitle dateISO={date} theme={theme} />
+        <div className={styles.taskWidget} data-active={isActiveDay}>
+            <DateTitle dateISO={date} theme={theme} isActiveDay={isActiveDay} />
 
             <ul className={styles.taskList}>
                 {tasks.map(({ id, text, completed }, index) => (

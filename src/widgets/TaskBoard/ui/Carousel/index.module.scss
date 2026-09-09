@@ -39,11 +39,16 @@ $highDisplayResFactor: 4; // 2560
     border-radius: 16px;
 
     background-color: $bgColor;
-    color: $accentColor;
+    color: $darkerAccentColor;
 
     &[data-state='isToday'] {
       background-color: $accentColor;
       color: $bgColor;
+    }
+
+    &[data-active='true'] {
+      background-color: $bgColor;
+      color: $accentColor;
     }
   }
 }
