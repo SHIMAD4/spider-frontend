@@ -1,7 +1,7 @@
-@import "../../../app/styles/variables.module.scss";
+@use "@app/styles/variables.module";
 
 .inputCheckbox {
-  accent-color: $accentColor;
+  accent-color: variables.$accentColor;
   width: 24px;
   height: 24px;
 }

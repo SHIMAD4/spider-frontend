@@ -1,4 +1,4 @@
-@import '../../../../app/styles/variables.module.scss';
+@use '@app/styles/variables.module';
 
 .taskWidget {
   width: 500px;
@@ -6,7 +6,7 @@
 
   padding: 24px;
 
-  border: 2px solid $darkerAccentColor;
+  border: 2px solid variables.$darkerAccentColor;
   border-radius: 16px;
 
   .taskList {
@@ -23,6 +23,6 @@
   }
 
   &[data-active='true'] {
-    border-color: $accentColor;
+    border-color: variables.$accentColor;
   }
 }

@@ -1,10 +1,10 @@
 import { TaskList } from '../TaskList'
 import { type FC, useLayoutEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
-import type { TaskDay } from '../../../../entities/task/model/taskSlice.ts'
-import { Icons } from '../../../../shared/ui/Icons'
-import { Button } from '../../../../shared/ui/Button'
+import { Icons } from '@shared/ui/Icons'
+import { Button } from '@shared/ui/Button'
 import { getActiveDayState, getDayTheme } from '../../utils/getDayTheme.ts'
+import type { TaskDay } from '@entities/task/model/taskSlice'
 
 type CarouselProps = {
     activeDayId: number

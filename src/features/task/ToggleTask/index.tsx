@@ -1,7 +1,7 @@
 import styles from '../../../entities/task/ui/TaskCard/index.module.scss'
-import { useAppDispatch } from '../../../app/store/hooks.ts'
-import { InputCheckbox } from '../../../shared/ui/InputCheckbox'
-import { toggleTask } from '../../../entities/task/model/taskSlice.ts'
+import { useAppDispatch } from '@app/store/hooks.ts'
+import { InputCheckbox } from '@shared/ui/InputCheckbox'
+import { toggleTask } from '@entities/task/model/taskSlice.ts'
 import type { FC } from 'react'
 
 type ToggleTaskAction = {

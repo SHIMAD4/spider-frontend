@@ -1,4 +1,4 @@
-@import '../../../../app/styles/variables.module.scss';
+@use '@app/styles/variables.module';
 
 $highDisplayResFactor: 4; // 2560
 //$highDisplayResFactor: 3; // 1920
@@ -38,17 +38,17 @@ $highDisplayResFactor: 4; // 2560
 
     border-radius: 16px;
 
-    background-color: $bgColor;
-    color: $darkerAccentColor;
+    background-color: variables.$bgColor;
+    color: variables.$darkerAccentColor;
 
     &[data-state='isToday'] {
-      background-color: $accentColor;
-      color: $bgColor;
+      background-color: variables.$accentColor;
+      color: variables.$bgColor;
     }
 
     &[data-active='true'] {
-      background-color: $bgColor;
-      color: $accentColor;
+      background-color: variables.$bgColor;
+      color: variables.$accentColor;
     }
   }
 }
@@ -70,7 +70,7 @@ $highDisplayResFactor: 4; // 2560
   }
 
   &:hover {
-    background-color: $accentColor;
-    color: $bgColor;
+    background-color: variables.$accentColor;
+    color: variables.$bgColor;
   }
 }

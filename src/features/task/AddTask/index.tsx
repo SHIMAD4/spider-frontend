@@ -1,11 +1,11 @@
 import styles from './index.module.scss'
-import { InputText } from '../../../shared/ui/InputText'
-import { Button } from '../../../shared/ui/Button'
-import { addTask } from '../../../entities/task/model/taskSlice.ts'
-import { useAppDispatch } from '../../../app/store/hooks.ts'
+import { InputText } from '@shared/ui/InputText'
+import { Button } from '@shared/ui/Button'
+import { addTask } from '@entities/task/model/taskSlice.ts'
+import { useAppDispatch } from '@app/store/hooks.ts'
 import { type FC, useState } from 'react'
-import { generateRandomId } from '../../../shared/utils/generateRandomId.ts'
-import { Icons } from '../../../shared/ui/Icons'
+import { generateRandomId } from '@shared/utils/generateRandomId.ts'
+import { Icons } from '@shared/ui/Icons'
 
 type AddTaskProps = {
     activeDayId: number

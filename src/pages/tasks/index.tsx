@@ -1,5 +1,5 @@
 import styles from './index.module.scss'
-import { TaskBoard } from '../../widgets/TaskBoard'
+import { TaskBoard } from '@widgets/TaskBoard'
 
 function TasksPage() {
     return (
