@@ -4,6 +4,7 @@ import styles from './index.module.scss'
 import type { TaskDay } from '../../../../entities/task/model/taskSlice.ts'
 import { Icons } from '../../../../shared/ui/Icons'
 import { Button } from '../../../../shared/ui/Button'
+import { getDayTheme } from '../../utils/getDayTheme.ts'
 
 type CarouselProps = {
     activeDayId: number
@@ -70,10 +71,6 @@ export const Carousel: FC<CarouselProps> = ({
         const nextDayId = data[nextIndex]?.id
 
         if (nextDayId) onChangeDayId(nextDayId)
-    }
-
-    const getDayTheme = (listId: number, todayId: number | null) => {
-        return listId === todayId ? 'isToday' : 'isDefaultDay'
     }
 
     return (
