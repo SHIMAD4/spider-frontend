@@ -1,9 +1,9 @@
-import { deleteTask } from '../../../entities/task/model/taskSlice.ts'
+import { deleteTask } from '@entities/task/model/taskSlice.ts'
 import type { FC } from 'react'
-import { useAppDispatch } from '../../../app/store/hooks.ts'
-import { Button } from '../../../shared/ui/Button'
+import { useAppDispatch } from '@app/store/hooks.ts'
+import { Button } from '@shared/ui/Button'
 import styles from './index.module.scss'
-import { Icons } from '../../../shared/ui/Icons'
+import { Icons } from '@shared/ui/Icons'
 
 type DeleteTaskAction = {
     id: number

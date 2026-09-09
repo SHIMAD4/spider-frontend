@@ -1,4 +1,4 @@
-@import '../../../app/styles/variables.module.scss';
+@use '@app/styles/variables.module';
 
 .title {
   display: flex;
@@ -8,15 +8,15 @@
   padding-bottom: 16px;
   margin-bottom: 16px;
 
-  border-bottom: 2px solid $darkerAccentColor;
+  border-bottom: 2px solid variables.$darkerAccentColor;
 
   font-weight: bold;
 
   &[data-state="isToday"] {
-    border-color: $bgColor;
+    border-color: variables.$bgColor;
   }
 
   &[data-active='true'] {
-    border-color: $accentColor;
+    border-color: variables.$accentColor;
   }
 }

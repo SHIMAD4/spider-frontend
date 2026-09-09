@@ -3,7 +3,7 @@ import {
     addTask,
     toggleTask,
     deleteTask,
-} from '../../../entities/task/model/taskSlice.ts'
+} from '@entities/task/model/taskSlice.ts'
 import type { RootStateType } from '../store.ts'
 
 export const listenerMiddleware = createListenerMiddleware()

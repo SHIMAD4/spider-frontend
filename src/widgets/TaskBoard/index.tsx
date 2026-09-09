@@ -1,7 +1,7 @@
-import { AddTask } from '../../features/task/AddTask'
+import { AddTask } from '@features/task/AddTask'
 import { Carousel } from './ui/Carousel'
-import { useAppSelector } from '../../app/store/hooks.ts'
-import { selectorTasks } from '../../entities/task/model/taskSelectors.ts'
+import { useAppSelector } from '@app/store/hooks.ts'
+import { selectorTasks } from '@entities/task/model/taskSelectors.ts'
 import { useEffect, useState } from 'react'
 
 export const TaskBoard = () => {

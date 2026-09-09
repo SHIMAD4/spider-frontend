@@ -1,9 +1,9 @@
-@import './app/styles/variables.module.scss';
+@use '@app/styles/variables.module';
 
 body {
   font-size: 24px;
-  background-color: $bgColor;
-  color: $accentColor;
+  background-color: variables.$bgColor;
+  color: variables.$accentColor;
 
   font-family: 'TildaSans', sans-serif;
 }
@@ -11,7 +11,7 @@ body {
 button {
   background-color: transparent;
   border: none;
-  color: $accentColor;
+  color: variables.$accentColor;
 
   transition: all .2s ease-in-out;
 

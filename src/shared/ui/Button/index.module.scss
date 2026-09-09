@@ -1,13 +1,13 @@
-@import "../../../app/styles/variables.module.scss";
+@use "@app/styles/variables.module";
 
 .button[data-state="isToday"] {
   svg {
-    fill: $bgColor;
+    fill: variables.$bgColor;
   }
 }
 
 .button[data-state="isDefaultDay"] {
   svg {
-    fill: $accentColor;
+    fill: variables.$accentColor;
   }
 }

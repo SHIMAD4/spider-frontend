@@ -1,4 +1,4 @@
-@import '../../../app/styles/variables.module.scss';
+@use '@app/styles/variables.module';
 
 .addTask {
   display: flex;
@@ -12,11 +12,11 @@
 
   border-radius: 8px;
 
-  background-color: $bgColor;
-  fill: $accentColor;
+  background-color: variables.$bgColor;
+  fill: variables.$accentColor;
 
   &:hover {
-    background-color: $accentColor;
-    fill: $bgColor;
+    background-color: variables.$accentColor;
+    fill: variables.$bgColor;
   }
 }
