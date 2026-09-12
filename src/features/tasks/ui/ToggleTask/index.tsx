@@ -10,12 +10,14 @@ type ToggleTaskAction = {
     id: number
     completed: boolean
     activeDayId: number
+    disabled: boolean
 }
 
 export const ToggleTask: FC<ToggleTaskAction> = ({
     id,
     completed,
     activeDayId,
+    disabled,
 }) => {
     const dispatch = useDispatch()
 
@@ -28,6 +30,7 @@ export const ToggleTask: FC<ToggleTaskAction> = ({
             className={styles.checkbox}
             completed={completed}
             onCheckedChange={handleChange}
+            disabled={disabled}
         />
     )
 }

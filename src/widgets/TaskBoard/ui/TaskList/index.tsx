@@ -26,11 +26,13 @@ export const TaskList: FC<TaskListProps> = ({
                         <TaskCard
                             text={text}
                             position={index + 1}
+                            disabled={!isActiveDay}
                             before={
                                 <ToggleTask
                                     id={id}
                                     completed={completed}
                                     activeDayId={activeDayId}
+                                    disabled={!isActiveDay}
                                 />
                             }
                             after={
@@ -38,6 +40,7 @@ export const TaskList: FC<TaskListProps> = ({
                                     id={id}
                                     activeDayId={activeDayId}
                                     theme={theme}
+                                    disabled={!isActiveDay}
                                 />
                             }
                         />

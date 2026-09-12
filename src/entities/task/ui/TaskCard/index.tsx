@@ -5,6 +5,7 @@ import styles from './index.module.scss'
 type TaskCardProps = {
     text: string
     position: number
+    disabled?: boolean
     before?: ReactNode
     after?: ReactNode
 }
@@ -12,11 +13,12 @@ type TaskCardProps = {
 export const TaskCard: FC<TaskCardProps> = ({
     text,
     position,
+    disabled,
     before,
     after,
 }) => {
     return (
-        <div className={styles.task}>
+        <div className={styles.task} data-disabled={disabled}>
             <div className={styles.inner}>
                 {before}
                 <span className={styles.text}>

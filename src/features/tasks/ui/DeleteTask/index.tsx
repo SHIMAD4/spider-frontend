@@ -12,12 +12,14 @@ type DeleteTaskAction = {
     id: number
     activeDayId: number
     theme?: string
+    disabled: boolean
 }
 
 export const DeleteTask: FC<DeleteTaskAction> = ({
     id,
     activeDayId,
     theme,
+    disabled,
 }) => {
     const dispatch = useDispatch()
 
@@ -30,6 +32,7 @@ export const DeleteTask: FC<DeleteTaskAction> = ({
             className={styles.deleteButton}
             onClick={handleDeleteTask}
             theme={theme}
+            disabled={disabled}
         >
             <Icons.Cross size={16} />
         </Button>
