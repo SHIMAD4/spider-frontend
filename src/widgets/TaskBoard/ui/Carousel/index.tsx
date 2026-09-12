@@ -104,7 +104,6 @@ export const Carousel: FC<CarouselProps> = ({
                         const isActiveDay = getActiveDayState(
                             activeDayId,
                             list.id,
-                            todayId,
                         )
 
                         return (

@@ -1,13 +1,14 @@
-@use "@app/styles/variables.module";
+@use '@app/styles/variables.module';
 
-.button[data-state="isToday"] {
-  svg {
-    fill: variables.$bgColor;
-  }
-}
+.button[data-state='isDefaultDay'],
+.button[data-state='isToday'] {
+    svg {
+        fill: variables.$accentColor;
+    }
 
-.button[data-state="isDefaultDay"] {
-  svg {
-    fill: variables.$accentColor;
-  }
+    &:disabled {
+        svg {
+            fill: variables.$darkerAccentColor;
+        }
+    }
 }
