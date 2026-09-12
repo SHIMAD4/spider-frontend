@@ -7,12 +7,14 @@ type InputCheckboxProps = {
     completed: boolean
     onCheckedChange: (completed: boolean) => void
     className?: string
+    disabled?: boolean
 }
 
 export const InputCheckbox: FC<InputCheckboxProps> = ({
     className,
     completed,
     onCheckedChange,
+    disabled,
 }) => {
     return (
         <input
@@ -20,6 +22,7 @@ export const InputCheckbox: FC<InputCheckboxProps> = ({
             className={clsx(styles.inputCheckbox, className)}
             checked={completed}
             onChange={(event) => onCheckedChange(event.currentTarget.checked)}
+            disabled={disabled}
         />
     )
 }
