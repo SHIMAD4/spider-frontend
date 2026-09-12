@@ -1,7 +1,7 @@
 import type { TaskDay } from './taskSlice.ts'
 
-type selectorTasksType = {
+type StateWithTasks = {
     tasks: TaskDay[]
 }
 
-export const selectorTasks = (state: selectorTasksType) => state.tasks
+export const selectorTasks = (state: StateWithTasks) => state.tasks

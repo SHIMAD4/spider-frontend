@@ -1,9 +1,7 @@
 import { createListenerMiddleware, isAnyOf } from '@reduxjs/toolkit'
-import {
-    addTask,
-    toggleTask,
-    deleteTask,
-} from '@entities/task/model/taskSlice.ts'
+
+import { addTask, deleteTask, toggleTask } from '@entities/task'
+
 import type { RootStateType } from '../store.ts'
 
 export const listenerMiddleware = createListenerMiddleware()

@@ -1,11 +1,14 @@
-import styles from './index.module.scss'
-import { InputText } from '@shared/ui/InputText'
-import { Button } from '@shared/ui/Button'
-import { addTask } from '@entities/task/model/taskSlice.ts'
-import { useAppDispatch } from '@app/store/hooks.ts'
 import { type FC, useState } from 'react'
-import { generateRandomId } from '@shared/utils/generateRandomId.ts'
+import { useDispatch } from 'react-redux'
+
+import { addTask } from '@entities/task'
+
+import { generateRandomId } from '@shared/lib/generateRandomId.ts'
+import { Button } from '@shared/ui/Button'
 import { Icons } from '@shared/ui/Icons'
+import { InputText } from '@shared/ui/InputText'
+
+import styles from './index.module.scss'
 
 type AddTaskProps = {
     activeDayId: number
@@ -13,7 +16,7 @@ type AddTaskProps = {
 
 export const AddTask: FC<AddTaskProps> = ({ activeDayId }) => {
     const [inputValue, setInputValue] = useState<string>('')
-    const dispatch = useAppDispatch()
+    const dispatch = useDispatch()
 
     const handleAddTask = () => {
         dispatch(
