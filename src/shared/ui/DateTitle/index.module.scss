@@ -1,22 +1,27 @@
 @use '@app/styles/variables.module';
 
 .title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  padding-bottom: 16px;
-  margin-bottom: 16px;
+    padding: 16px 0 16px 0;
+    margin-bottom: 16px;
 
-  border-bottom: 2px solid variables.$darkerAccentColor;
+    border-bottom: 2px solid variables.$darkerAccentColor;
+    border-radius: 16px;
 
-  font-weight: bold;
+    font-weight: bold;
 
-  &[data-state="isToday"] {
-    border-color: variables.$bgColor;
-  }
+    &[data-active='true'] {
+        background-color: variables.$bgColor;
+        color: variables.$accentColor;
+        border-color: variables.$accentColor;
+    }
 
-  &[data-active='true'] {
-    border-color: variables.$accentColor;
-  }
+    &[data-state='isToday'] {
+        background-color: variables.$accentColor;
+        color: variables.$bgColor;
+        border-color: variables.$bgColor;
+    }
 }

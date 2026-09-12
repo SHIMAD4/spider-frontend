@@ -1,7 +1,42 @@
-@use "@app/styles/variables.module";
+@use '@app/styles/variables.module';
 
 .inputCheckbox {
-  accent-color: variables.$accentColor;
-  width: 24px;
-  height: 24px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: variables.$bgColor;
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    width: 24px;
+    height: 24px;
+    border: 2.4px solid variables.$accentColor;
+    border-radius: 2.4px;
+
+    display: grid;
+    place-content: center;
+
+    &::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 50px 50px variables.$accentColor;
+        background-color: CanvasText;
+        border: 2.4px solid variables.$bgColor;
+        border-radius: 2.4px;
+    }
+
+    &[data-active='true'] {
+        border: 2.4px solid variables.$darkerAccentColor;
+    }
+
+    &[data-active='true']::before {
+        box-shadow: inset 50px 50px variables.$darkerAccentColor;
+    }
+
+    &:checked::before {
+        transform: scale(1);
+    }
 }

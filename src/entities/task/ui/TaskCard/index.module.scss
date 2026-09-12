@@ -1,3 +1,5 @@
+@use '@app/styles/variables.module';
+
 .task {
     width: 100%;
 
@@ -21,11 +23,11 @@
 
         .checkbox:checked + .text {
             text-decoration: line-through;
-            color: #888;
+            color: variables.$darkerAccentColor;
         }
 
         .text {
-            transition: color 0.2s;
+            transition: 120ms color ease-in-out;
         }
     }
 }

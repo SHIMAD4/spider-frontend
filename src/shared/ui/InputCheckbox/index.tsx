@@ -23,6 +23,7 @@ export const InputCheckbox: FC<InputCheckboxProps> = ({
             checked={completed}
             onChange={(event) => onCheckedChange(event.currentTarget.checked)}
             disabled={disabled}
+            data-active={disabled}
         />
     )
 }
