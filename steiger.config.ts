@@ -4,6 +4,7 @@ import { defineConfig } from 'steiger'
 export default defineConfig([
     ...fsd.configs.recommended,
 
+    // TODO: Убрать когда на странице появятся еще компоненты
     {
         files: ['./src/features/tasks/**', './src/widgets/TaskBoard/**'],
         rules: {
