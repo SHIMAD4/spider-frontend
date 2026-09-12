@@ -1,9 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+
+import { StoreProvider } from '@app/state/StoreProvider.tsx'
 import '@app/styles/reset.css'
-import './index.module.scss'
+
 import TasksPage from '@pages/tasks'
-import { StoreProvider } from '@app/store/StoreProvider.tsx'
+
+import './index.module.scss'
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>

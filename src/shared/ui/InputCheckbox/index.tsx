@@ -1,5 +1,6 @@
-import type { FC } from 'react'
 import clsx from 'clsx'
+import type { FC } from 'react'
+
 import styles from './index.module.scss'
 
 type InputCheckboxProps = {

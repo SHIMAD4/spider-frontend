@@ -1,5 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { taskReducer } from '@entities/task/model/taskSlice.ts'
+
+import { taskReducer } from '@entities/task'
+
 import { listenerMiddleware } from './Task/taskMiddleware.ts'
 
 export const store = configureStore({

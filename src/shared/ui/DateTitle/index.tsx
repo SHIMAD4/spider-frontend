@@ -1,5 +1,6 @@
-import styles from './index.module.scss'
 import type { FC } from 'react'
+
+import styles from './index.module.scss'
 
 type DataTitleProps = {
     dateISO: string

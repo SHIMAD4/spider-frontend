@@ -1,8 +1,9 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import type { PayloadActionType, TaskTypes } from './taskTypes.ts'
-import { generateDays } from '../utils/generateDays.ts'
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-export interface TaskDay {
+import { generateDays } from '../lib/generateDays.ts'
+import type { PayloadActionType, TaskTypes } from './taskTypes.ts'
+
+export type TaskDay = {
     id: number
     tasks: TaskTypes[]
     date: string

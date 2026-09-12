@@ -1,8 +1,10 @@
-import styles from '../../../entities/task/ui/TaskCard/index.module.scss'
-import { useAppDispatch } from '@app/store/hooks.ts'
-import { InputCheckbox } from '@shared/ui/InputCheckbox'
-import { toggleTask } from '@entities/task/model/taskSlice.ts'
 import type { FC } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { toggleTask } from '@entities/task'
+import styles from '@entities/task/ui/TaskCard/index.module.scss'
+
+import { InputCheckbox } from '@shared/ui/InputCheckbox'
 
 type ToggleTaskAction = {
     id: number
@@ -15,7 +17,7 @@ export const ToggleTask: FC<ToggleTaskAction> = ({
     completed,
     activeDayId,
 }) => {
-    const dispatch = useAppDispatch()
+    const dispatch = useDispatch()
 
     const handleChange = () => {
         dispatch(toggleTask({ id: id, dayId: activeDayId }))

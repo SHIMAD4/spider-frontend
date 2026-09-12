@@ -1,4 +1,5 @@
 import { type FC, type ReactNode } from 'react'
+
 import styles from './index.module.scss'
 
 type TaskCardProps = {

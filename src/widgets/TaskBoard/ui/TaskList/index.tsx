@@ -1,9 +1,12 @@
 import type { FC } from 'react'
-import type { TaskListProps } from '@entities/task/model/taskTypes.ts'
-import { TaskCard } from '@entities/task/ui/TaskCard'
-import { ToggleTask } from '@features/task/ToggleTask'
-import { DeleteTask } from '@features/task/DeleteTask'
+
+import { DeleteTask, ToggleTask } from '@features/tasks'
+
+import type { TaskListProps } from '@entities/task'
+import { TaskCard } from '@entities/task'
+
 import { DateTitle } from '@shared/ui/DateTitle'
+
 import styles from './index.module.scss'
 
 export const TaskList: FC<TaskListProps> = ({

@@ -1,12 +1,3 @@
-import styles from './index.module.scss'
-import { TaskBoard } from '@widgets/TaskBoard'
-
-function TasksPage() {
-    return (
-        <div className={styles.main}>
-            <TaskBoard />
-        </div>
-    )
-}
+import { TasksPage } from './ui/index.tsx'
 
 export default TasksPage

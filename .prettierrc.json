@@ -5,5 +5,24 @@
     "printWidth": 80,
     "trailingComma": "all",
     "jsxSingleQuote": true,
-    "bracketSpacing": true
+    "bracketSpacing": true,
+
+    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+
+    "importOrder": [
+        "<BUILTIN_MODULES>",
+        "<THIRD_PARTY_MODULES>",
+        "^@app/(.*)$",
+        "^@pages/(.*)$",
+        "^@widgets/(.*)$",
+        "^@features/(.*)$",
+        "^@entities/(.*)$",
+        "^@shared/(.*)$",
+        "^@/(.*)$",
+        "^[../]",
+        "^[./]"
+    ],
+
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true
 }

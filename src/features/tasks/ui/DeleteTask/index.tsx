@@ -1,9 +1,12 @@
-import { deleteTask } from '@entities/task/model/taskSlice.ts'
 import type { FC } from 'react'
-import { useAppDispatch } from '@app/store/hooks.ts'
+import { useDispatch } from 'react-redux'
+
+import { deleteTask } from '@entities/task'
+
 import { Button } from '@shared/ui/Button'
-import styles from './index.module.scss'
 import { Icons } from '@shared/ui/Icons'
+
+import styles from './index.module.scss'
 
 type DeleteTaskAction = {
     id: number
@@ -16,7 +19,7 @@ export const DeleteTask: FC<DeleteTaskAction> = ({
     activeDayId,
     theme,
 }) => {
-    const dispatch = useAppDispatch()
+    const dispatch = useDispatch()
 
     const handleDeleteTask = () => {
         dispatch(deleteTask({ id: id, dayId: activeDayId }))

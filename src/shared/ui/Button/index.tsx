@@ -1,6 +1,7 @@
-import styles from './index.module.scss'
-import type { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react'
 import clsx from 'clsx'
+import type { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react'
+
+import styles from './index.module.scss'
 
 type ButtonProps = PropsWithChildren<{
     className?: string
@@ -8,7 +9,12 @@ type ButtonProps = PropsWithChildren<{
 }> &
     ButtonHTMLAttributes<HTMLButtonElement>
 
-export const Button: FC<ButtonProps> = ({ className, children, theme, ...props }) => {
+export const Button: FC<ButtonProps> = ({
+    className,
+    children,
+    theme,
+    ...props
+}) => {
     return (
         <button
             {...props}

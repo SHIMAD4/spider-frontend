@@ -1,24 +1,21 @@
-import { AddTask } from '@features/task/AddTask'
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
+
+import { AddTask } from '@features/tasks'
+
+import { selectorTasks } from '@entities/task'
+
 import { Carousel } from './ui/Carousel'
-import { useAppSelector } from '@app/store/hooks.ts'
-import { selectorTasks } from '@entities/task/model/taskSelectors.ts'
-import { useEffect, useState } from 'react'
 
 export const TaskBoard = () => {
-    const data = useAppSelector(selectorTasks)
+    const data = useSelector(selectorTasks)
 
-    // toISOString высчитывает дату по часовому поясу, нужно заменить на что-то что будет отдавать локальное время пользователя
     const today = new Date().toISOString().slice(0, 10)
-    const todayIndex = data.findIndex((list) => list.date === today)
-    const todayId = data[todayIndex]?.id ?? null
+    const todayId = data.find((day) => day.date === today)?.id ?? null
 
-    const [activeDayId, setActiveDayId] = useState<number | null>(todayId)
+    const [selectedDayId, setSelectedDayId] = useState<number | null>(null)
 
-    useEffect(() => {
-        if (todayId !== null && activeDayId === null) {
-            setActiveDayId(todayId)
-        }
-    }, [todayId])
+    const activeDayId = selectedDayId ?? todayId
 
     return (
         <>
@@ -28,7 +25,7 @@ export const TaskBoard = () => {
                     data={data}
                     todayId={todayId}
                     activeDayId={activeDayId}
-                    onChangeDayId={setActiveDayId}
+                    onChangeDayId={setSelectedDayId}
                 />
             )}
         </>
