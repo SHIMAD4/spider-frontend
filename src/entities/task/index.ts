@@ -4,10 +4,12 @@ export {
     addTask,
     toggleTask,
     deleteTask,
+    setTag,
     taskReducer,
 } from './model/taskSlice.ts'
 
-export { TaskCard } from './ui/TaskCard'
+export { TaskCard } from './ui/Card'
+export { Tag } from './ui/Tag'
 
-export type { TaskListProps } from './model/taskTypes.ts'
+export type { TaskListProps, TaskTag } from './model/taskTypes.ts'
 export type { TaskDay } from './model/taskSlice.ts'

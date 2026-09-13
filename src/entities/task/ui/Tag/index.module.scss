@@ -1,0 +1,19 @@
+@use '@app/styles/variables.module';
+
+.tag {
+    padding: 6px 13px;
+    font-size: 16px;
+
+    border: 2px solid variables.$accentColor;
+    border-radius: 8px;
+
+    &:disabled {
+        color: variables.$darkerAccentColor;
+        border: 2px solid variables.$darkerAccentColor;
+    }
+}
+
+.completed {
+    color: variables.$darkerAccentColor;
+    border: 2px solid variables.$darkerAccentColor;
+}

@@ -25,7 +25,7 @@ export const TaskCard: FC<TaskCardProps> = ({
                     {position}. {text}
                 </span>
             </div>
-            {after}
+            <div className={styles.afterBlock}>{after}</div>
         </div>
     )
 }

@@ -62,8 +62,28 @@ const taskSlice = createSlice({
                 (task) => task.id !== action.payload.id,
             )
         },
+        setTag: (
+            state,
+            action: PayloadAction<{
+                dayId: PayloadActionType['dayId']
+                taskId: PayloadActionType['id']
+                tag: PayloadActionType['tag'] | null
+            }>,
+        ) => {
+            const day = state.find((day) => day.id === action.payload.dayId)
+
+            if (!day) return
+
+            const task = day.tasks.find(
+                (task) => task.id === action.payload.taskId,
+            )
+
+            if (!task) return
+
+            task.tag = action.payload.tag
+        },
     },
 })
 
-export const { addTask, toggleTask, deleteTask } = taskSlice.actions
+export const { addTask, toggleTask, deleteTask, setTag } = taskSlice.actions
 export const taskReducer = taskSlice.reducer

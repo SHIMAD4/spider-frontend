@@ -1,22 +1,23 @@
-@use "@app/styles/variables.module";
+@use '@app/styles/variables.module';
 
 .input {
-  padding: 16px 24px;
-  border: none;
-  background-color: transparent;
-  transition: border .2s ease-in-out;
-  color: variables.$accentColor;
-  font-size: 16px;
-
-  &::placeholder {
-    font-family: 'TildaSans', sans-serif;
-    font-weight: bold;
+    padding: 16px 24px;
+    border: none;
+    background-color: transparent;
+    transition: border 0.2s ease-in-out;
     color: variables.$accentColor;
-  }
+    font-size: 16px;
 
-  &:focus {
-    outline: 1px solid variables.$accentColor;
+    &::placeholder {
+        font-family: 'TildaSans', sans-serif;
+        font-weight: bold;
+        color: variables.$accentColor;
+    }
 
-    border-radius: 8px;
-  }
+    &:focus {
+        border: 2px solid variables.$accentColor;
+        outline: none;
+
+        border-radius: 8px;
+    }
 }

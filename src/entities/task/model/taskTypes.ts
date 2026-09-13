@@ -10,6 +10,12 @@ export type TaskTypes = {
     id: number
     text: string
     completed: boolean
+    tag?: TaskTag | null
+}
+
+export type TaskTag = {
+    id: number
+    text: string
 }
 
 export type PayloadActionType = {
@@ -17,4 +23,5 @@ export type PayloadActionType = {
     text: string
     completed: boolean
     dayId: number
+    tag?: TaskTag | null
 }

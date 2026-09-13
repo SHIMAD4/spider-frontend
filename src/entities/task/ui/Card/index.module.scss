@@ -30,4 +30,11 @@
             transition: 120ms color ease-in-out;
         }
     }
+
+    .afterBlock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+    }
 }

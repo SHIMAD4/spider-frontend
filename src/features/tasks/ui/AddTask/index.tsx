@@ -52,6 +52,7 @@ export const AddTask: FC<AddTaskProps> = ({ activeDayId }) => {
     return (
         <div className={styles.addTask}>
             <InputText
+                className={styles.input}
                 placeholder={'Введите текст'}
                 value={inputValue}
                 onValueChange={setInputValue}

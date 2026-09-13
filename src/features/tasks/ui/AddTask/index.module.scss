@@ -20,3 +20,10 @@
         fill: variables.$bgColor;
     }
 }
+
+.input {
+    &:focus {
+        border: none;
+        outline: 2px solid variables.$accentColor;
+    }
+}
