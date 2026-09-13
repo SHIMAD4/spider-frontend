@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react'
+import { type FC, type KeyboardEvent, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { addTask } from '@entities/task'
@@ -14,21 +14,40 @@ type AddTaskProps = {
     activeDayId: number
 }
 
+const ENTER_EVENT_KEY = 'Enter'
+
 export const AddTask: FC<AddTaskProps> = ({ activeDayId }) => {
     const [inputValue, setInputValue] = useState<string>('')
     const dispatch = useDispatch()
 
-    const handleAddTask = () => {
-        dispatch(
-            addTask({
-                id: generateRandomId(),
-                dayId: activeDayId,
-                text: inputValue,
-                completed: false,
-            }),
-        )
+    const handleKeyDown = (event: KeyboardEvent) => {
+        if (event.key === ENTER_EVENT_KEY && inputValue.trim().length > 0) {
+            dispatch(
+                addTask({
+                    id: generateRandomId(),
+                    dayId: activeDayId,
+                    text: inputValue,
+                    completed: false,
+                }),
+            )
 
-        setInputValue('')
+            setInputValue('')
+        }
+    }
+
+    const handleAddTask = () => {
+        if (inputValue.trim().length > 0) {
+            dispatch(
+                addTask({
+                    id: generateRandomId(),
+                    dayId: activeDayId,
+                    text: inputValue,
+                    completed: false,
+                }),
+            )
+
+            setInputValue('')
+        }
     }
 
     return (
@@ -37,6 +56,7 @@ export const AddTask: FC<AddTaskProps> = ({ activeDayId }) => {
                 placeholder={'Введите текст'}
                 value={inputValue}
                 onValueChange={setInputValue}
+                onKeyDown={handleKeyDown}
             />
             <Button className={styles.addButton} onClick={handleAddTask}>
                 <Icons.Add size={16} />
