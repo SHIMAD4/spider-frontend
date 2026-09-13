@@ -1,0 +1,16 @@
+@use '@app/styles/variables.module';
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.backButton {
+    font-weight: bold;
+
+    .icon {
+        fill: variables.$accentColor;
+    }
+}
