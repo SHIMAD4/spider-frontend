@@ -2,7 +2,6 @@ import { type FC, type KeyboardEvent, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { addTask } from '@entities/task'
-
 import { generateRandomId } from '@shared/lib/generateRandomId.ts'
 import { Button } from '@shared/ui/Button'
 import { Icons } from '@shared/ui/Icons'

@@ -2,7 +2,6 @@ import type { FC } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { deleteTask } from '@entities/task'
-
 import { Button } from '@shared/ui/Button'
 import { Icons } from '@shared/ui/Icons'
 

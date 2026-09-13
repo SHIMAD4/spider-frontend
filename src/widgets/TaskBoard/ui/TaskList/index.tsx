@@ -1,10 +1,8 @@
 import type { FC } from 'react'
 
 import { DeleteTask, ToggleTask } from '@features/tasks'
-
 import type { TaskListProps } from '@entities/task'
 import { TaskCard } from '@entities/task'
-
 import { DateTitle } from '@shared/ui/DateTitle'
 
 import styles from './index.module.scss'
