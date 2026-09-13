@@ -1,12 +1,18 @@
 import type { FC } from 'react'
 
-import { DeleteTask, ToggleTask } from '@features/tasks'
+import {
+    AddTaskTag,
+    DeleteTask,
+    EditTaskTag,
+    ToggleTask,
+} from '@features/tasks'
 import type { TaskListProps } from '@entities/task'
 import { TaskCard } from '@entities/task'
 import { DateTitle } from '@shared/ui/DateTitle'
 
 import styles from './index.module.scss'
 
+// TODO: Проверить, возможно пропс theme не нужен в проекте
 export const TaskList: FC<TaskListProps> = ({
     tasks,
     date,
@@ -19,7 +25,7 @@ export const TaskList: FC<TaskListProps> = ({
             <DateTitle dateISO={date} theme={theme} isActiveDay={isActiveDay} />
 
             <ul className={styles.taskList}>
-                {tasks.map(({ id, text, completed }, index) => (
+                {tasks.map(({ id, text, completed, tag }, index) => (
                     <li key={id} className={styles.taskItem}>
                         <TaskCard
                             text={text}
@@ -34,12 +40,31 @@ export const TaskList: FC<TaskListProps> = ({
                                 />
                             }
                             after={
-                                <DeleteTask
-                                    id={id}
-                                    activeDayId={activeDayId}
-                                    theme={theme}
-                                    disabled={!isActiveDay}
-                                />
+                                <>
+                                    <AddTaskTag
+                                        taskId={id}
+                                        activeDayId={activeDayId}
+                                        theme={theme}
+                                        disabled={!isActiveDay}
+                                        tag={tag}
+                                    />
+                                    {tag && (
+                                        <EditTaskTag
+                                            taskId={id}
+                                            dayId={activeDayId}
+                                            completed={completed}
+                                            tag={tag}
+                                            theme={theme}
+                                            disabled={!isActiveDay}
+                                        />
+                                    )}
+                                    <DeleteTask
+                                        id={id}
+                                        activeDayId={activeDayId}
+                                        theme={theme}
+                                        disabled={!isActiveDay}
+                                    />
+                                </>
                             }
                         />
                     </li>

@@ -1,0 +1,23 @@
+@use '@app/styles/variables.module';
+
+.addTagButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    border: 2px solid variables.$accentColor;
+    border-radius: 4px;
+
+    .icon {
+        fill: variables.$accentColor;
+    }
+
+    &:disabled {
+        border: 2px solid variables.$darkerAccentColor;
+    }
+}
+
+.input {
+    width: 100px;
+    padding: 6px 12px;
+}

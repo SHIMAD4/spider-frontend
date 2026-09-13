@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { toggleTask } from '@entities/task'
-import styles from '@entities/task/ui/TaskCard/index.module.scss'
+import styles from '@entities/task/ui/Card/index.module.scss'
 import { InputCheckbox } from '@shared/ui/InputCheckbox'
 
 type ToggleTaskAction = {

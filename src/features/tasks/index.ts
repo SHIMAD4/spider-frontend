@@ -1,3 +1,5 @@
 export { AddTask } from './ui/AddTask'
 export { ToggleTask } from './ui/ToggleTask'
 export { DeleteTask } from './ui/DeleteTask'
+export { AddTaskTag } from './ui/AddTaskTag'
+export { EditTaskTag } from './ui/EditTaskTag'
