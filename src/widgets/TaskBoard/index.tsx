@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import { AddTask } from '@features/tasks'
-
 import { selectorTasks } from '@entities/task'
 
 import { Carousel } from './ui/Carousel'

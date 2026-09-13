@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 
 import { StoreProvider } from '@app/state/StoreProvider.tsx'
 import '@app/styles/reset.css'
-
 import TasksPage from '@pages/tasks'
 
 import './index.module.scss'

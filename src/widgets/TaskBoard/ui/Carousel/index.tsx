@@ -1,12 +1,12 @@
 import { type FC, useLayoutEffect, useRef, useState } from 'react'
 
 import type { TaskDay } from '@entities/task'
-
 import { Button } from '@shared/ui/Button'
 import { Icons } from '@shared/ui/Icons'
 
 import { getActiveDayState, getDayTheme } from '../../lib'
 import { TaskList } from '../TaskList'
+
 import styles from './index.module.scss'
 
 type CarouselProps = {
