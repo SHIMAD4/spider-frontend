@@ -3,8 +3,12 @@ import { useSelector } from 'react-redux'
 
 import { AddTask } from '@features/tasks'
 import { selectorTasks } from '@entities/task'
+import { Button } from '@shared/ui/Button'
+import { Icons } from '@/shared/ui/Icons'
 
 import { Carousel } from './ui/Carousel'
+
+import styles from './index.module.scss'
 
 export const TaskBoard = () => {
     const data = useSelector(selectorTasks)
@@ -16,9 +20,19 @@ export const TaskBoard = () => {
 
     const activeDayId = selectedDayId ?? todayId
 
+    const handleBackClick = () => {
+        setSelectedDayId(todayId)
+    }
+
     return (
         <>
-            {activeDayId !== null && <AddTask activeDayId={activeDayId} />}
+            <header className={styles.header}>
+                {activeDayId !== null && <AddTask activeDayId={activeDayId} />}
+
+                <Button className={styles.backButton} onClick={handleBackClick}>
+                    <Icons.Home size={24} className={styles.icon} />
+                </Button>
+            </header>
             {data.length > 0 && activeDayId !== null && (
                 <Carousel
                     data={data}

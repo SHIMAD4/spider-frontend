@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux'
 
 import { addTask } from '@entities/task'
 import { generateRandomId } from '@shared/lib/generateRandomId.ts'
-import { Button } from '@shared/ui/Button'
-import { Icons } from '@shared/ui/Icons'
+// import { Button } from '@shared/ui/Button'
+// import { Icons } from '@shared/ui/Icons'
 import { InputText } from '@shared/ui/InputText'
 
 import styles from './index.module.scss'
@@ -34,20 +34,20 @@ export const AddTask: FC<AddTaskProps> = ({ activeDayId }) => {
         }
     }
 
-    const handleAddTask = () => {
-        if (inputValue.trim().length > 0) {
-            dispatch(
-                addTask({
-                    id: generateRandomId(),
-                    dayId: activeDayId,
-                    text: inputValue,
-                    completed: false,
-                }),
-            )
-
-            setInputValue('')
-        }
-    }
+    // const handleAddTask = () => {
+    //     if (inputValue.trim().length > 0) {
+    //         dispatch(
+    //             addTask({
+    //                 id: generateRandomId(),
+    //                 dayId: activeDayId,
+    //                 text: inputValue,
+    //                 completed: false,
+    //             }),
+    //         )
+    //
+    //         setInputValue('')
+    //     }
+    // }
 
     return (
         <div className={styles.addTask}>
@@ -57,9 +57,9 @@ export const AddTask: FC<AddTaskProps> = ({ activeDayId }) => {
                 onValueChange={setInputValue}
                 onKeyDown={handleKeyDown}
             />
-            <Button className={styles.addButton} onClick={handleAddTask}>
-                <Icons.Add size={16} />
-            </Button>
+            {/*<Button className={styles.addButton} onClick={handleAddTask}>*/}
+            {/*    <Icons.Add size={16} />*/}
+            {/*</Button>*/}
         </div>
     )
 }
