@@ -1,5 +1,4 @@
-import { type FC, useState } from 'react'
-import type { KeyboardEvent } from 'react'
+import { type FC, type KeyboardEvent, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { addTask } from '@entities/task'
